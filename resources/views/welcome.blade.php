@@ -1,0 +1,1 @@
+{{helperTrans('file.test')}}
