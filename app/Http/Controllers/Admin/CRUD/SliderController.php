@@ -82,7 +82,7 @@ class SliderController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $data['image'] = $this->uploadFiles('admins', $request->image);
+            $data['image'] = $this->uploadFiles('Articles', $request->image);
         }
         $this->model::create($data);
         return response()->json(

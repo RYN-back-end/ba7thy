@@ -60,7 +60,6 @@ class ContactController extends Controller
     public function destroy($id)
     {
         $row = $this->model::findOrFail($id);
-        deleteFile($row->image);
         $row->delete();
         return response()->json(
             [

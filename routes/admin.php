@@ -10,6 +10,10 @@ use App\Http\Controllers\Admin\{
     CRUD\WhatPresentController,
     CRUD\AboutUsImagesController,
     CRUD\AboutUsController,
+    CRUD\ArticlesController,
+    CRUD\ServicesController,
+    CRUD\MajorsController,
+    CRUD\ServiceTypeController,
     SettingController,
 };
 
@@ -30,6 +34,10 @@ Route::middleware('admin')->group(function () {
     Route::resource('whatPresent', WhatPresentController::class)->only('index', 'store');
     Route::resource('about-us', AboutUsController::class);
     Route::resource('about-us-images', AboutUsImagesController::class);
+    Route::resource('articles', ArticlesController::class);
+    Route::resource('services', ServicesController::class);
+    Route::resource('majors', MajorsController::class);
+    Route::resource('servicesType', ServiceTypeController::class);
 
     Route::resource('setting', SettingController::class)->only('index', 'store');
 });
