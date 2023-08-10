@@ -21,6 +21,9 @@
 <!-- End Footer Area  -->
 
 @include('FrontEnd.layout.assets.js')
+@include('layouts.toaster.toaster')
+@yield('web.scripts')
+
 </body>
 
 </html>

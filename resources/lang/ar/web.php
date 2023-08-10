@@ -1,10 +1,17 @@
 <?php return array (
     'about us' => 'من نحن',
     'who we are' => 'من نحن',
+    'about' => 'عننا',
+    'know about' => 'تعرف علينا',
     'home' => 'الصفحة الرئيسية',
     'Research' => 'أبحاث',
     'services' => 'خدمات',
     'Service Request' => 'طلب الخدمة',
     'Connect us' => 'تواصل معنا',
     'language' => 'اللغة',
+    'wait' => 'انتظر...',
+    'send' => 'ارسال',
+    'Send_a_message' => 'ابقي علي تواصل معنا',
+    'we_received' => 'شكرا لمراسلتك , سنقوم بالرد عليك في اقرب وقت ممكن',
+    'whatPresent' => 'ماذا نقدم',
 );

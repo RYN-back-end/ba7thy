@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-6 col-12 ab-content">
-                <h2 class="title"><span class="subtitle"><i class="fas fa-fire"></i> {{$whatPresent->title}}</span></h2>
+                <h2 class="title"><span class="subtitle"><i class="fas fa-fire"></i> {{helperTrans('web.whatPresent')}}</span></h2>
                 {!! $whatPresent->text !!}
             </div>
             <div class="col-lg-6 col-12">

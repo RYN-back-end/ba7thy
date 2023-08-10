@@ -44,8 +44,7 @@ class AboutUsImagesController extends Controller
             'images' => 'required|array',
             'images.*' => 'required|image',
         ]);
-
-        foreach ($request->images ?? [] as $image) {
+        foreach ($request->images as $image) {
             $storeImage['image'] = $this->uploadFiles('aboutUs', $image);
             $this->model->create($storeImage);
         }

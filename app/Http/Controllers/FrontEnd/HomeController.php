@@ -4,7 +4,9 @@ namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
+use App\Http\Requests\ContactRequest;
 use App\Models\AboutUsImages;
+use App\Models\ContactUs;
 use App\Models\Slider;
 use App\Models\WhatPresent;
 use Illuminate\Http\Request;
@@ -58,4 +60,10 @@ class HomeController extends Controller
     {
         return view('FrontEnd.contact');
     }//end fun
+
+    public function postContact(ContactRequest $request){
+        $validatedData = $request->validated();
+        ContactUs::create($validatedData);
+        return response()->json(['status' => 200]);
+    }
 }//end class

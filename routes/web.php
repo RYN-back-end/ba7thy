@@ -21,3 +21,4 @@ Route::get('research',[HomeController::class,'research'])->name('frontend.resear
 Route::get('services',[HomeController::class,'services'])->name('frontend.services');
 Route::get('ask-service',[HomeController::class,'askService'])->name('frontend.ask-service');
 Route::get('contact',[HomeController::class,'contact'])->name('frontend.contact');
+Route::post('postContact',[HomeController::class,'postContact'])->name('postContact');

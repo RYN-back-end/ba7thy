@@ -63,14 +63,12 @@
   'Upload Images' => 'Upload Images',
   'save' => 'Save',
   'site Logo' => 'Site Logo',
-<<<<<<< HEAD
   'about-us image' => 'About-us image',
   'about-us background' => 'About-us background',
   'about-us Title' => 'About-us Title',
   'about-us Text' => 'About-us Text',
   'users' => 'Users',
   'add user' => 'Add user',
-  'admin' => 'Admin',
   'example' => 'Example',
   'enter password' => 'Enter password',
   'contacts' => 'Contacts',
@@ -83,7 +81,12 @@
   'corporate Policy' => 'Corporate Policy',
   'QHSE Policy' => 'QHSE Policy',
   'Title' => 'Title',
-  'About Us' => 'About Us',
-=======
->>>>>>> 5d875ec8ffb24e0aaaf88a29f000a4ab10cc0a30
+  'Connect us' => 'Connect us',
+  'login' => 'Login',
+  'Alammah' => 'Alammah',
+  'password' => 'Password',
+  'enter Password' => 'Enter Password',
+  'welcome back' => 'Welcome back',
+  'add Slider' => 'Add Slider',
+  'phone' => 'Phone',
 );

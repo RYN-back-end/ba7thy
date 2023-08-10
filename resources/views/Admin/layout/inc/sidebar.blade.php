@@ -53,6 +53,14 @@
                 {{--                    </a>--}}
                 {{--                </li>--}}
 
+
+                <li>
+                    <a class="m-link" href="{{route('contacts.index')}}">
+                        <i class="fa fa-message"></i>
+                        <span> {{helperTrans('admin.Connect us')}} </span>
+                    </a>
+                </li>
+
                 <li>
                     <a class="m-link" href="{{route('setting.index')}}">
                         <i class="fa fa-cogs"></i>

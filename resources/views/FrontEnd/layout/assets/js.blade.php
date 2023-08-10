@@ -28,3 +28,5 @@
         loader.classList.add("hide_loader");
     });
 </script>
+
+

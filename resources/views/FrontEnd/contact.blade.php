@@ -37,32 +37,33 @@
                                 .اذا كان لديك الموهبه والقدره على الترجمه وانشاء الابحاث والمحتوى لا تتردد فى
                                 التواصل معنا
                             </p>
-                            <form id="contact-form" method="POST" action="mail.php" class="axil-contact-form">
+                            <form id="contactForm" method="POST" action="{{route('postContact')}}" class="axil-contact-form">
+                                @csrf
                                 <div class="row row--10">
                                     <div class="col-lg-4">
                                         <div class="form-group"> <label for="contact-name">الاسم
-                                                <span>*</span></label> <input type="text" name="contact-name"
+                                                <span>*</span></label> <input type="text" name="name"
                                                                               id="contact-name"> </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group"> <label for="contact-phone">الهاتف
-                                                <span>*</span></label> <input type="text" name="contact-phone"
+                                                <span>*</span></label> <input type="text" name="phone"
                                                                               id="contact-phone"> </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group"> <label for="contact-email">البريد الإلكتروني
-                                                <span>*</span></label> <input type="email" name="contact-email"
+                                                <span>*</span></label> <input type="email" name="email"
                                                                               id="contact-email"> </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group"> <label for="contact-message">رسالتك</label>
-                                            <textarea name="contact-message" id="contact-message" cols="1"
+                                            <textarea name="message" id="message" cols="1"
                                                       rows="2"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="col-12 d-flex justify-content-end">
-                                            <button class="sendform" type="submit">
+                                            <button class="sendform" id="sendBtn" type="submit">
                                                 <i class="fa-sharp fa-light fa-paper-plane-top"></i> إرسال
                                             </button>
                                         </div>
@@ -104,5 +105,55 @@
             <!-- End Google Map Area  -->
         </div>
     </div>
+
     <!-- End Contact Area  -->
 @endsection
+@section('web.scripts')
+    <script>
+        $("form#contactForm").submit(function (e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var url = $('#contactForm').attr('action');
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: formData,
+                beforeSend: function () {
+                    $('#sendBtn').html('<span style="margin-right: 4px;color: white"> {{trans('web.wait')}} </span><span class="spinner-border spinner-border-sm text-light" ' + ' ></span>');
+                },
+                success: function (data) {
+                    if (data.status == 200) {
+                        my_toaster("{{trans('web.we_received')}}","success");
+                        $('#contactForm')[0].reset();
+                        $('#sendBtn').html("{{trans('web.send')}}").attr('disabled', false);
+                    } else {
+                        my_toaster('Oops There is an error','error');
+                    }
+                },
+                error: function (data) {
+                    if (data.status == 500) {
+                        $('#sendBtn').html("{{trans('web.send')}}").attr('disabled', false);
+                        my_toaster('Oops There is an error','error');
+                    } else if (data.status == 422) {
+                        $('#sendBtn').html("{{trans('web.send')}}").attr('disabled', false);
+                        var errors = $.parseJSON(data.responseText);
+                        $.each(errors, function (key, value) {
+                            if ($.isPlainObject(value)) {
+                                $.each(value, function (key, value) {
+                                    my_toaster(value,'error');
+                                });
+                            }
+                        });
+                    }
+                },//end error method
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        });
+
+    </script>
+
+@endsection
+
+

@@ -3,9 +3,9 @@
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <div class="section-title-wrapper">
-                            <span class="title-highlighter highlighter-primary2"><i class="fal fa-star"></i> {{helperTrans('web.about us')}}
+                            <span class="title-highlighter highlighter-primary2"><i class="fal fa-star"></i> {{helperTrans('web.about')}}
                             </span>
-                    <h2 class="title">{{helperTrans('web.who we are')}} </h2>
+                    <h2 class="title">{{helperTrans('web.know about')}} </h2>
                 </div>
                 <div class="row">
                     @foreach($aboutUs as $key=>$row)
