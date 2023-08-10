@@ -176,4 +176,5 @@
   'corporate Policy' => 'Corporate Policy',
   'QHSE Policy' => 'QHSE Policy',
   'Title' => 'Title',
+  'About Us' => 'About Us',
 );
