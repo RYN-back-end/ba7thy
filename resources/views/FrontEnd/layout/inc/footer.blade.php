@@ -80,7 +80,7 @@
                     <div class="copyright-left d-flex flex-wrap justify-content-xl-start justify-content-center">
                         <p class="copy-right-p">
                             جميع الحقوق محفوظة لدى<a target="_blank" href="https://rynprogramming.com/">
-                                <img src="{{url('assets/frontend')}}/img/Subtract.svg" alt="nami"> RYN
+                                <img src="{{url('assets')}}/frontend/img/logo-new.png" alt="nami">
                             </a>
                         </p>
                     </div>

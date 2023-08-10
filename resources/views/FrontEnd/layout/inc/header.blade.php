@@ -18,22 +18,22 @@
                             </a>
                         </div>
                         <ul class="mainmenu">
-                            <li><a href="{{route('frontend.index')}}">الرئيسية</a></li>
-                            <li><a href="about-us.html"> من نحن </a></li>
-                            <li><a href="research.html"> البحث العلمى </a></li>
-                            <li><a href="services.html"> الخدمات </a></li>
-                            <li><a href="ask-service.html"> طلب خدمة </a></li>
-                            <li><a href="contact.html"> تواصل معنا </a></li>
+                            <li><a href="{{route('frontend.index')}}">{{helperTrans('web.home')}}</a></li>
+                            <li><a href="{{route('frontend.about-us')}}">{{helperTrans('web.who we are')}}</a></li>
+                            <li><a href="{{route('frontend.research')}}"> {{helperTrans('web.Research')}} </a></li>
+                            <li><a href="{{route('frontend.services')}}"> {{helperTrans('web.services')}} </a></li>
+                            <li><a href="{{route('frontend.ask-service')}}"> {{helperTrans('web.Service Request')}} </a></li>
+                            <li><a href="{{route('frontend.contact')}}"> {{helperTrans('web.Connect us')}} </a></li>
                             <li class="menu-item-has-children language">
-                                <a href="#"> اللغة </a>
+                                <a href="#">{{helperTrans('web.language')}}</a>
                                 <ul class="axil-submenu">
                                     <li>
-                                        <a href="#!">
+                                        <a href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">
                                             <img src="{{url('assets/frontend')}}/img/flag-egypt.png" alt=""> عربي
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#!">
+                                        <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
                                             <img src="{{url('assets/frontend')}}/img/Flag_of_the_United_States.png" alt="">
                                             English
                                         </a>

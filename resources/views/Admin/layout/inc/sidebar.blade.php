@@ -39,6 +39,9 @@
                         <li><a class="ms-link"
                                href="{{route('about-us.index')}}">{{helperTrans('admin.About Us')}}</a>
                         </li>
+                        <li><a class="ms-link"
+                               href="{{route('about-us-images.index')}}">{{helperTrans('admin.About us images')}}</a>
+                        </li>
 
 
                     </ul>
