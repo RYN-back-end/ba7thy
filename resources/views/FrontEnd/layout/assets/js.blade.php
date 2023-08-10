@@ -19,3 +19,12 @@
 <script src="{{url('assets/frontend')}}/js/jquery.fancybox.min.js"></script>
 <!-- Main JS -->
 <script src="{{url('assets/frontend')}}/js/rtl-main.js"></script>
+<script>
+    var loader = document.getElementById("preload");
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            loader.classList.add("hide_loader");
+        }, 1500);
+        loader.classList.add("hide_loader");
+    });
+</script>

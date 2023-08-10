@@ -16,3 +16,8 @@ use App\Http\Controllers\FrontEnd\{
 |
 */
 Route::get('/',[HomeController::class,'index'])->name('frontend.index');
+Route::get('about-us',[HomeController::class,'aboutUs'])->name('frontend.about-us');
+Route::get('research',[HomeController::class,'research'])->name('frontend.research');
+Route::get('services',[HomeController::class,'services'])->name('frontend.services');
+Route::get('ask-service',[HomeController::class,'askService'])->name('frontend.ask-service');
+Route::get('contact',[HomeController::class,'contact'])->name('frontend.contact');

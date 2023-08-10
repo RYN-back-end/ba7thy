@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\{
     CRUD\AdminsController,
     CRUD\SliderController,
     CRUD\WhatPresentController,
+    CRUD\AboutUsImagesController,
     CRUD\AboutUsController,
     SettingController,
 };
@@ -26,6 +27,7 @@ Route::middleware('admin')->group(function () {
     Route::resource('slider', SliderController::class);
     Route::resource('whatPresent', WhatPresentController::class)->only('index', 'store');
     Route::resource('about-us', AboutUsController::class);
+    Route::resource('about-us-images', AboutUsImagesController::class);
 
     Route::resource('setting', SettingController::class)->only('index', 'store');
 });

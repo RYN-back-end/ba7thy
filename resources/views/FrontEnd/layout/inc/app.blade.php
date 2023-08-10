@@ -6,6 +6,7 @@
 </head>
 
 <body class="sticky-header">
+<div id="preload"></div>
 <a href="#top" class="back-to-top" id="backto-top"><i class="fal fa-arrow-up"></i></a>
 <a class="whatsappButton" href="https://wa.me/201097984798"><img src="{{url('assets/frontend')}}/img/whatsappbrand.svg" alt=""></a>
 <!-- Start Header -->
