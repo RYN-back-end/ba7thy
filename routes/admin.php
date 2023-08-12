@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\{
     CRUD\ServicesController,
     CRUD\MajorsController,
     CRUD\ServiceTypeController,
+    CRUD\Requestsontroller,
     SettingController,
 };
 
@@ -38,6 +39,7 @@ Route::middleware('admin')->group(function () {
     Route::resource('services', ServicesController::class);
     Route::resource('majors', MajorsController::class);
     Route::resource('servicesType', ServiceTypeController::class);
+    Route::resource('requests', Requestsontroller::class);
 
     Route::resource('setting', SettingController::class)->only('index', 'store');
 });

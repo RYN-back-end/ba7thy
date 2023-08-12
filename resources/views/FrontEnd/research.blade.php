@@ -7,11 +7,13 @@
                 <div class="col-lg-6 col-md-8">
                     <div class="inner">
                         <ul class="axil-breadcrumb">
-                            <li class="axil-breadcrumb-item"><a href="index.html"> الرئيسية </a></li>
+                            <li class="axil-breadcrumb-item"><a
+                                    href="{{route('frontend.index')}}"> {{helperTrans('admin.Home')}} </a></li>
                             <li class="separator"></li>
-                            <li class="axil-breadcrumb-item active" aria-current="page"> البحث العلمى</li>
+                            <li class="axil-breadcrumb-item active"
+                                aria-current="page">{{helperTrans('web.Research')}} </li>
                         </ul>
-                        <h1 class="title"> كل ما يتعلق بالبحث الأكاديمى. </h1>
+                        <h1 class="title"> {{helperTrans('web.All about academic research.')}}</h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-4">
@@ -32,151 +34,47 @@
                     <!-- TAP -->
                     <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#v-pills-faq" role="tab"
                             aria-selected="true">
-                        المقالات
+                        {{helperTrans('web.Articles')}}
                     </button>
                     <!-- TAP -->
                     <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-terms" role="tab"
                             aria-selected="false">
-                        نصائح وإرشادات
+                        {{helperTrans('web.Tips and Advice')}}
                     </button>
                     <!-- TAP -->
                     <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-delivery" role="tab"
                             aria-selected="false">
-                        مصادر وكورسات
+                        {{helperTrans('web.Resources and courses')}}
                     </button>
                 </div>
-                <div class="tab-content col-lg-9 col-12" id="v-pills-tabContent">
+                <div class="tab-content col-lg-9 col-12" role="tabpanel" id="v-pills-tabContent">
                     <div class="tab-pane info-container fade show active" id="v-pills-faq" role="tabpanel">
-                        <h2 class="research-heading"> مقالاتنا </h2>
+                        <h2 class="research-heading"> {{helperTrans('web.Our articles')}} </h2>
                         <div class="row g-5">
-                            <div class="col-md-4">
-                                <div class="content-blog blog-grid">
-                                    <div class="inner">
-                                        <div class="thumbnail">
-                                            <a href="article.html">
-                                                <img src="{{url('assets')}}/frontend/img/doctoral.jpg" alt="Blog Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="fw-bold mb-4">رسائل ماجيستير ودكتوراه</h5>
-                                            <h5 class="title">
-                                                <a href="article.html">
-                                                    تعدّ رسائل الماجستير والدكتوراه من أهم الركائز الأكاديمية التي
-                                                    تحدد مستقبل
-                                                    الطلاب وتؤثر بشكل كبير على حياتهم المهنية....
+                            @foreach($articles as $article)
+                                <div class="col-md-4">
+                                    <div class="content-blog blog-grid">
+                                        <div class="inner">
+                                            <div class="thumbnail">
+                                                <a href="{{route('frontend.article',$article->id)}}">
+                                                    <img src="{{get_file($article->image)}}"
+                                                         alt="Blog Images">
                                                 </a>
-                                            </h5>
-                                            <div class="read-more-btn">
-                                                <a class="axil-btn right-icon" href="article.html"> قراءة المزيد <i
-                                                        class="fal fa-long-arrow-left"></i></a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="fw-bold mb-4">{{$article->title}}</h5>
+                                                <div class="read-more-btn">
+                                                    <a class="axil-btn right-icon" href="{{route('frontend.article',$article->id)}}">{{helperTrans('web.Read more')}}<i
+                                                            class="fal fa-long-arrow-left"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="content-blog blog-grid">
-                                    <div class="inner">
-                                        <div class="thumbnail">
-                                            <a href="article.html">
-                                                <img src="{{url('assets')}}/frontend/img/medical.png" alt="Blog Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="fw-bold mb-4">ترجمه طبيه </h5>
-                                            <h5 class="title">
-                                                <a href="article.html">
-                                                    تعتبر الترجمة الطبية من الخدمات الحيوية التي تساهم في تبادل
-                                                    المعرفة
-                                                    والمعلومات الطبية بين الثقافات واللغات....
-                                                </a>
-                                            </h5>
-                                            <div class="read-more-btn">
-                                                <a class="axil-btn right-icon" href="article.html"> قراءة المزيد <i
-                                                        class="fal fa-long-arrow-left"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="content-blog blog-grid">
-                                    <div class="inner">
-                                        <div class="thumbnail">
-                                            <a href="article.html">
-                                                <img src="{{url('assets')}}/frontend/img/law.jpg" alt="Blog Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="fw-bold mb-4"> ترجمه قانونيه </h5>
-                                            <h5 class="title">
-                                                <a href="article.html">
-                                                    تعد الترجمة القانونية أحد الجوانب الحيوية للتواصل الفعال وتبادل
-                                                    المعلومات
-                                                    القانونية بين مختلف اللغات. يلعب....
-                                                </a>
-                                            </h5>
-                                            <div class="read-more-btn">
-                                                <a class="axil-btn right-icon" href="article.html"> قراءة المزيد <i
-                                                        class="fal fa-long-arrow-left"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="content-blog blog-grid">
-                                    <div class="inner">
-                                        <div class="thumbnail">
-                                            <a href="article.html">
-                                                <img src="{{url('assets')}}/frontend/img/scientific.jpg" alt="Blog Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="fw-bold mb-4"> ترجمه علميه </h5>
-                                            <h5 class="title">
-                                                <a href="article.html">
-                                                    تلعب الترجمة العلمية دورًا حيويًا في تبادل المعرفة والاطلاع على
-                                                    الأبحاث
-                                                    والدراسات العلمية في مختلف المجالات....
-                                                </a>
-                                            </h5>
-                                            <div class="read-more-btn">
-                                                <a class="axil-btn right-icon" href="article.html"> قراءة المزيد <i
-                                                        class="fal fa-long-arrow-left"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="content-blog blog-grid">
-                                    <div class="inner">
-                                        <div class="thumbnail">
-                                            <a href="article.html">
-                                                <img src="{{url('assets')}}/frontend/img/grammmer.jpg" alt="Blog Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="fw-bold mb-4"> تدقيق لغوى ونحوى </h5>
-                                            <h5 class="title">
-                                                <a href="article.html">
-                                                    هل ترغب في تحسين جودة محتواك اللغوي والنحوي؟ احصل على خدمة
-                                                    التدقيق النحوي
-                                                    واللغوي الاحترافية معنا الآن!
-                                                </a>
-                                            </h5>
-                                            <div class="read-more-btn">
-                                                <a class="axil-btn right-icon" href="article.html"> قراءة المزيد <i
-                                                        class="fal fa-long-arrow-left"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                    <div class="tab-pane info-container fade show active" id="v-pills-terms" role="tabpanel">
+                    <div class="tab-pane info-container fade " id="v-pills-terms" role="tabpanel">
                         <h2 class="research-heading"> نصائح وإرشادات مهمة فى البحث العلمى </h2>
                         <p>
                             1.السرية والأمان:
@@ -225,7 +123,7 @@
                             معين.
                         </p>
                     </div>
-                    <div class="tab-pane info-container fade show active" id="v-pills-delivery" role="tabpanel">
+                    <div class="tab-pane info-container fade " id="v-pills-delivery" role="tabpanel">
                         <h2 class="research-heading">مصادر وكورسات مفيده للمهتمين بالبحث العلمى</h2>
                         <p>
                             1.السرية والأمان:

@@ -22,7 +22,7 @@
                             <li><a href="{{route('frontend.about-us')}}">{{helperTrans('web.who we are')}}</a></li>
                             <li><a href="{{route('frontend.research')}}"> {{helperTrans('web.Research')}} </a></li>
                             <li><a href="{{route('frontend.services')}}"> {{helperTrans('web.services')}} </a></li>
-                            <li><a href="{{route('frontend.ask-service')}}"> {{helperTrans('web.Service Request')}} </a></li>
+                            <li><a href="{{route('frontend.ask-service')}}"> {{helperTrans('web.Service Request')}}</a></li>
                             <li><a href="{{route('frontend.contact')}}"> {{helperTrans('web.Connect us')}} </a></li>
                             <li class="menu-item-has-children language">
                                 <a href="#">{{helperTrans('web.language')}}</a>
@@ -34,7 +34,8 @@
                                     </li>
                                     <li>
                                         <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
-                                            <img src="{{url('assets/frontend')}}/img/Flag_of_the_United_States.png" alt="">
+                                            <img src="{{url('assets/frontend')}}/img/Flag_of_the_United_States.png"
+                                                 alt="">
                                             English
                                         </a>
                                     </li>
@@ -46,21 +47,17 @@
                 </div>
                 <div class="social-media-nav">
                     <ul>
-                        <li title="face book group">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <li title="twitter">
+                            <a href="https://twitter.com/bahthi_1" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                         </li>
-                        <li title="instgram page">
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <li title="telegram">
+                            <a href="https://t.me/Bahthi_1" target="_blank"><i class="fa-brands fa-telegram"></i></a>
                         </li>
-                        <li title="twitter page">
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <li title="snapchat">
+                            <a href="https://t.snapchat.com/z0ULJgHt" target="_blank"><i class="fa-brands fa-snapchat-square"></i></a>
                         </li>
-                        <li title="telegram channel">
-                            <a href="#"><i class="fa-brands fa-telegram"></i></a>
-                        </li>
-                        <li title="youtube channel">
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        </li>
+
+
                     </ul>
                 </div>
                 <div class="header-action">

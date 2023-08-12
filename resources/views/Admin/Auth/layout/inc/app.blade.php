@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content=" maintenance management  computerized system ">
     <meta name="keyword" content=" maintenance management  computerized system ">
-    <link rel="icon" href="{{url('assets/website')}}/img/fav.svg" type="image/x-icon">
-    <title> {{helperTrans('admin.Alammah')}} </title>
+    <link rel="icon" href="{{url('assets/frontend')}}/img/4.svg" type="image/x-icon">
+    <title> بحثى | Bahthi </title>
     <link rel="stylesheet" href="{{url('assets/dashboard')}}/css/all.css">
     <link rel="stylesheet" href="{{url('assets/dashboard')}}/css/styleAR.css">
     <link rel="stylesheet" href="{{url('assets/dashboard')}}/css/custom.css">
@@ -36,8 +36,8 @@
         <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center">
             <p class=" text-muted d-flex align-items-center gap-1">
                 {{helperTrans('admin.all rights are save')}}
-                <a href="{{route('frontend.index')}}" target="_blank" title="{{setting()->title}}" class="namiFotter">
-                    <img src="{{url('assets/dashboard')}}/img/fav.svg" alt=""> {{setting()->title}}
+                <a href="https://rynprogramming.com/" target="_blank" title="{{setting()->title}}" class="namiFotter">
+                    <img src="{{url('assets')}}/frontend/img/logo-new.png" alt="nami">
                 </a>
                 © {{date('Y')}}
                 ❤️

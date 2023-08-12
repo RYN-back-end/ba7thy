@@ -3,11 +3,11 @@
     <form class="row g-3" id="Form" action="{{route('admin.login')}}" method="POST">
         @csrf
         <div class="col-12 text-center mb-4">
-            <img class="authLogo" src="{{url('assets/website')}}/img/logo.svg" alt="">
+            <img class="authLogo" src="{{url('assets/frontend')}}/img/3.svg" alt="">
         </div>
         <div class="col-12 text-center mb-5">
             <h2 class="fw-bold">{{helperTrans('admin.login')}} </h2>
-            <span class="text-muted"> {{helperTrans('admin.Alammah')}} </span>
+            <span class="text-muted"> بحثى | Bahthi</span>
         </div>
         <div class="col-12">
             <div class="mb-2">

@@ -1,61 +1,32 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Auth;
+namespace App\Http\Controllers\Admin\CRUD;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
-use App\Models\Drivers;
-use App\Models\Order;
-use App\Models\Product;
-use App\Models\User;
-use App\Models\Warehouse;
+use App\Http\Traits\Upload_Files;
+use App\Models\ContactUs;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
-class AuthController extends Controller
+class Requestsontroller extends Controller
 {
+    use Upload_Files;
+
     public function __construct()
     {
-        $this->folderPath .= "Auth";
+        $this->folderPath .= "CRUD.Requests";
+        $this->model = \App\Models\Request::class;
     }
 
-    public function login(Request $request)
-    {
-
-        if (admin()->check()) {
-            return redirect()->route('admin.index');
-        }
-
-        if ($request->ajax()) {
-
-            $data = $request->validate([
-                'email' => 'required|exists:admins',
-                'password' => 'required'
-            ]);
-            if (admin()->attempt($data, 1)) {
-                return response()->json(200);
-            }
-
-            return response()->json(405);
-        }
-        return view("$this->folderPath.login");
-    }//end fun
-
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function logout()
-    {
-        admin()->logout();
-        my_toaster(helperTrans('admin.Signed out successfully'), 'info');
-        return redirect()->route('admin.index');
-    }//end fun
-
     public function index(Request $request)
     {
-
         if ($request->ajax()) {
-            $data = \App\Models\Request::latest();
+            $data = $this->model::latest();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->editColumn('created_at', function ($row) {
@@ -86,6 +57,20 @@ class AuthController extends Controller
                 })->escapeColumns([])->make(true);
         }//end fun
         $oneObjectTitle = helperTrans('admin.Request');
-        return view("Admin.Home.index", compact('oneObjectTitle'));
+        return view("$this->folderPath.index", compact('oneObjectTitle'));
+    }
+
+
+
+
+    public function destroy($id)
+    {
+        $row = $this->model::findOrFail($id);
+        $row->delete();
+        return response()->json(
+            [
+                'code' => 200,
+                'message' => helperTrans('admin.operation accomplished successfully')
+            ]);
     }//end fun
-}//end class
+}

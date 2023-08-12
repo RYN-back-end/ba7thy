@@ -22,3 +22,6 @@ Route::get('services',[HomeController::class,'services'])->name('frontend.servic
 Route::get('ask-service',[HomeController::class,'askService'])->name('frontend.ask-service');
 Route::get('contact',[HomeController::class,'contact'])->name('frontend.contact');
 Route::post('postContact',[HomeController::class,'postContact'])->name('postContact');
+Route::post('storeRequest',[HomeController::class,'storeRequest'])->name('store.request');
+Route::get('article/{id}',[HomeController::class,'article'])->name('frontend.article');
+Route::get('service/{id}',[HomeController::class,'service'])->name('frontend.service');

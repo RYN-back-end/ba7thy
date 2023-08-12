@@ -59,27 +59,27 @@
 
                     </ul>
                 </li>
-                {{--                <li>--}}
-                {{--                    <a class="m-link" href="{{route('contacts.index')}}">--}}
-                {{--                        <i class="fa fa-message"></i>--}}
-                {{--                        <span> {{helperTrans('admin.messages')}} </span>--}}
-                {{--                    </a>--}}
-                {{--                </li>--}}
-
-
                 <li>
                     <a class="m-link" href="{{route('contacts.index')}}">
                         <i class="fa fa-message"></i>
-                        <span> {{helperTrans('admin.Connect us')}} </span>
+                        <span> {{helperTrans('admin.messages')}} </span>
                     </a>
                 </li>
 
-                <li>
-                    <a class="m-link" href="{{route('setting.index')}}">
-                        <i class="fa fa-cogs"></i>
-                        <span> {{helperTrans('admin.setting')}} </span>
-                    </a>
-                </li>
+
+{{--                <li>--}}
+{{--                    <a class="m-link" href="{{route('requests.index')}}">--}}
+{{--                        <i class="fa fa-code-pull-request"></i>--}}
+{{--                        <span> {{helperTrans('admin.Requests')}} </span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+
+                {{--                <li>--}}
+                {{--                    <a class="m-link" href="{{route('setting.index')}}">--}}
+                {{--                        <i class="fa fa-cogs"></i>--}}
+                {{--                        <span> {{helperTrans('admin.setting')}} </span>--}}
+                {{--                    </a>--}}
+                {{--                </li>--}}
 
                 {{--                <li>--}}
                 {{--                    <!-- main link -->--}}

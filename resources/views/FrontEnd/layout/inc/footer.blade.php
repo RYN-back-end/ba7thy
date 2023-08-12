@@ -12,27 +12,17 @@
                             </a>
                         </div>
                         <div class="inner">
-                            <p>
-                                نحن شركة متميزة ومتخصصة في مجال تقديم خدمات الترجمة الاحترافية والكتابة الأكاديمية
-                                لرسائل الماجستير والدراسات العليا. نتفهم أهمية المحتوى العلمي والأكاديمي المتميز،
-                                ونسعى جاهدين لتقديم خدمات ترجمة وكتابة متميزة تلبي احتياجاتكم وتفوق توقعاتكم.
-                            </p>
+                            <p>{{trans('web.Welcome to our research platform for academic services. We are a team of researchers, educators, and academics who are dedicated to helping students and researchers achieve their academic goals. We offer a variety of services, including academic advising, research guidance, and educational workshops. We believe in the power of education and research to transform society, and we are committed to helping our community succeed. Join us today and see how we can help you reach your academic goals.')}}</p>
                             <div class="social-media-nav">
                                 <ul>
-                                    <li title="face book group">
-                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <li title="twitter">
+                                        <a href="https://twitter.com/bahthi_1" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                                     </li>
-                                    <li title="instgram page">
-                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                    <li title="telegram">
+                                        <a href="https://t.me/Bahthi_1" target="_blank"><i class="fa-brands fa-telegram"></i></a>
                                     </li>
-                                    <li title="twitter page">
-                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                    </li>
-                                    <li title="telegram channel">
-                                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
-                                    </li>
-                                    <li title="youtube channel">
-                                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                    <li title="snapchat">
+                                        <a href="https://t.snapchat.com/z0ULJgHt" target="_blank"><i class="fa-brands fa-snapchat-square"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -43,12 +33,13 @@
                 <!-- Start Single Widget  -->
                 <div class="col-lg-3 col-sm-6">
                     <div class="axil-footer-widget">
-                        <h5 class="widget-title"> روابط سريعة </h5>
+                        <h5 class="widget-title"> {{helperTrans('web.Quick links')}} </h5>
                         <div class="inner">
                             <ul>
-                                <li><a href="about-us.html"> من نحن </a></li>
-                                <li><a href="services.html"> الخدمات </a></li>
-                                <li><a href="research.html"> البحث العلمى </a></li>
+                                <li><a href="{{route('frontend.about-us')}}"> {{helperTrans('web.who we are')}} </a></li>
+                                <li><a href="{{route('frontend.research')}}"> {{helperTrans('web.Research')}} </a></li>
+                                <li><a href="{{route('frontend.services')}}"> {{helperTrans('web.services')}} </a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -57,12 +48,11 @@
                 <!-- Start Single Widget  -->
                 <div class="col-lg-4 col-sm-6">
                     <div class="axil-footer-widget">
-                        <h5 class="widget-title"> الدعم </h5>
+                        <h5 class="widget-title"> {{helperTrans('web.the support')}} </h5>
                         <div class="inner">
                             <ul>
-                                <li><a href="privacy-policy.html"> الشروط والأحكام </a></li>
-                                <li><a href="ask-service.html"> طلب خدمة </a></li>
-                                <li><a href="contact.html"> تواصل معنا </a></li>
+                                <li><a href="{{route('frontend.ask-service')}}"> {{helperTrans('web.Service Request')}}</a></li>
+                                <li><a href="{{route('frontend.contact')}}"> {{helperTrans('web.Connect us')}} </a></li>
                             </ul>
                         </div>
                     </div>
@@ -79,7 +69,7 @@
                 <div class="col-12 d-flex align-items-center justify-content-center">
                     <div class="copyright-left d-flex flex-wrap justify-content-xl-start justify-content-center">
                         <p class="copy-right-p">
-                            جميع الحقوق محفوظة لدى<a target="_blank" href="https://rynprogramming.com/">
+                            {{helperTrans('web.All rights reserved')}}<a target="_blank" href="https://rynprogramming.com/">
                                 <img src="{{url('assets')}}/frontend/img/logo-new.png" alt="nami">
                             </a>
                         </p>

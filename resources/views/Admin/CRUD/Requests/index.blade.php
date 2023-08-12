@@ -7,8 +7,6 @@
 @section('content')
 
     <div class="card">
-        {!! indexButtons(helperTrans('admin.Requests')) !!}
-
         <div class="card-body">
             <!-- data table -->
             <table id="dataTable" class="table myDataTable align-middle custom-table">

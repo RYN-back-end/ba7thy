@@ -7,11 +7,11 @@
                 <div class="col-lg-6 col-md-8">
                     <div class="inner">
                         <ul class="axil-breadcrumb">
-                            <li class="axil-breadcrumb-item"><a href="index.html"> الرئيسية </a></li>
+                            <li class="axil-breadcrumb-item"><a href="{{route('frontend.index')}}"> {{helperTrans('web.Home')}} </a></li>
                             <li class="separator"></li>
-                            <li class="axil-breadcrumb-item active" aria-current="page"> تواصل معنا </li>
+                            <li class="axil-breadcrumb-item active" aria-current="page"> {{helperTrans('web.contact us')}} </li>
                         </ul>
-                        <h1 class="title"> كن علي اتصال </h1>
+                        <h1 class="title"> {{helperTrans('web.Get in touch')}} </h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-4">
@@ -32,31 +32,28 @@
                 <div class="row row--30 justify-content-between">
                     <div class="col-lg-8">
                         <div class="contact-form">
-                            <h3 class="title mb--10">نحن نرغب بالاستماع منك.</h3>
-                            <p>
-                                .اذا كان لديك الموهبه والقدره على الترجمه وانشاء الابحاث والمحتوى لا تتردد فى
-                                التواصل معنا
-                            </p>
+                            <h3 class="title mb--10">{{helperTrans("web.We'd love to hear from you")}}.</h3>
+                            <p>{{helperTrans('web.If you have the talent and ability to translate and create research and content, do not hesitate to Contact us')}}</p>
                             <form id="contactForm" method="POST" action="{{route('postContact')}}" class="axil-contact-form">
                                 @csrf
                                 <div class="row row--10">
                                     <div class="col-lg-4">
-                                        <div class="form-group"> <label for="contact-name">الاسم
+                                        <div class="form-group"> <label for="contact-name">{{helperTrans('web.name')}}
                                                 <span>*</span></label> <input type="text" name="name"
                                                                               id="contact-name"> </div>
                                     </div>
                                     <div class="col-lg-4">
-                                        <div class="form-group"> <label for="contact-phone">الهاتف
+                                        <div class="form-group"> <label for="contact-phone">{{helperTrans('web.phone')}}
                                                 <span>*</span></label> <input type="text" name="phone"
                                                                               id="contact-phone"> </div>
                                     </div>
                                     <div class="col-lg-4">
-                                        <div class="form-group"> <label for="contact-email">البريد الإلكتروني
+                                        <div class="form-group"> <label for="contact-email">{{helperTrans('web.email')}}
                                                 <span>*</span></label> <input type="email" name="email"
                                                                               id="contact-email"> </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-group"> <label for="contact-message">رسالتك</label>
+                                        <div class="form-group"> <label for="contact-message">{{helperTrans('web.your message')}}</label>
                                             <textarea name="message" id="message" cols="1"
                                                       rows="2"></textarea>
                                         </div>
@@ -64,7 +61,7 @@
                                     <div class="col-12">
                                         <div class="col-12 d-flex justify-content-end">
                                             <button class="sendform" id="sendBtn" type="submit">
-                                                <i class="fa-sharp fa-light fa-paper-plane-top"></i> إرسال
+                                                <i class="fa-sharp fa-light fa-paper-plane-top"></i> {{helperTrans('web.send')}}
                                             </button>
                                         </div>
                                     </div>
@@ -74,19 +71,18 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="contact-location mb--40">
-                            <h4 class="title mb--20">معلومات التواصل</h4>
+                            <h4 class="title mb--20">{{helperTrans('web.Contact Information')}}</h4>
                             <span class="address">
-                                    القاهرة - مدينة نصر
+                                    {{helperTrans('web.Cairo - Nasr City')}}
                                 </span>
-                            <span class="phone">الهاتف: <a href="tel:+201097984798">201097984798+</a></span>
-                            <span class="email">البريد
-                                    الإلكتروني:
+                            <span class="phone">{{helperTrans('web.the phone')}}: <a href="tel:+201097984798">201097984798+</a></span>
+                            <span class="email">{{helperTrans('web.E-mail')}}:
                                     <a href="mailto:ahmed.alhemaly@icloud.com">ahmed.alhemaly@icloud.com</a>
                                 </span>
                         </div>
                         <div class="opening-hour">
-                            <h4 class="title mb--20">ساعات العمل:</h4>
-                            <p>من السبت إلى الخميس : 9 صباحًا - 10 مساءً <br>الجمعة : 10 صباحًا - 6 مساءً </p>
+                            <h4 class="title mb--20">{{helperTrans('web.work hours')}}:</h4>
+                            <p>{{helperTrans('web.From Saturday to Thursday: 9 am - 10 pm')}} <br>{{helperTrans('web.Friday: 10 am - 6 pm')}}ً </p>
                         </div>
                     </div>
                 </div>

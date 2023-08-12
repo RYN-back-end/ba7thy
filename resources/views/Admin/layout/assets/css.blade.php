@@ -5,7 +5,7 @@
 <meta name="keyword" content=" maintenance management  computerized system ">
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <link rel="icon" href="{{url('assets/default')}}/imgs/fav.svg" type="image/x-icon">
-<title>  {{setting()->title}} </title>
+<title>  بحثى | Bahthi </title>
 <!-- main styles -->
 <link rel="stylesheet" href="{{url('assets/dashboard')}}/css/all.css">
 {{--<link rel="stylesheet" href="{{url('assets/dashboard')}}/css/styleAR.css">--}}
