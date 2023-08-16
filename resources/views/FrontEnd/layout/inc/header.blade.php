@@ -20,10 +20,10 @@
                         <ul class="mainmenu">
                             <li><a href="{{route('frontend.index')}}">{{helperTrans('web.home')}}</a></li>
                             <li><a href="{{route('frontend.about-us')}}">{{helperTrans('web.who we are')}}</a></li>
-                            <li><a href="{{route('frontend.research')}}"> {{helperTrans('web.Research')}} </a></li>
-                            <li><a href="{{route('frontend.services')}}"> {{helperTrans('web.services')}} </a></li>
+                            <li><a href="{{route('frontend.research')}}"> {{helperTrans('web.Research content')}} </a></li>
+                            <li><a href="{{route('frontend.services')}}"> {{helperTrans('web.Our services')}} </a></li>
                             <li><a href="{{route('frontend.ask-service')}}"> {{helperTrans('web.Service Request')}}</a></li>
-                            <li><a href="{{route('frontend.contact')}}"> {{helperTrans('web.Connect us')}} </a></li>
+                            <li><a href="{{route('frontend.contact')}}"> {{helperTrans('web.Contact us')}} </a></li>
                             <li class="menu-item-has-children language">
                                 <a href="#">{{helperTrans('web.language')}}</a>
                                 <ul class="axil-submenu">

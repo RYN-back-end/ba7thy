@@ -1,7 +1,7 @@
 @font-face {
-  font-family: IBMPlexSansArabic;
+  font-family: Roboto;
   font-display: swap;
-  src: url(../fonts/IBMPlexSansArabic-Regular.ttf);
+    src: url(../fonts/Roboto-Medium.ttf);
 }
 [data-nami=theme-blue] {
   --body-color: #f2f2f2;
@@ -26,7 +26,7 @@ a {
 }
 
 * {
-  font-family: "IBMPlexSansArabic", Sans-serif;
+  font-family: "Roboto", Sans-serif;
 }
 
 .brand-icon .logo {
@@ -211,7 +211,7 @@ body {
 .apexcharts-tooltip-title,
 .apexcharts-text tspan,
 .apexcharts-canvas text {
-  font-family: "IBMPlexSansArabic", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
 }
 
 .apexcharts-text tspan {
