@@ -27,6 +27,20 @@
         }, 1500);
         loader.classList.add("hide_loader");
     });
+
+
+    $('.socialClick').click(function (){
+        var url = "{{route('updateClickNums')}}";
+        var type =  $(this).attr('id');
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+                type: type
+            },
+        });
+
+    });
 </script>
 
 

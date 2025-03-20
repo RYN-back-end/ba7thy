@@ -12,6 +12,7 @@
   'sInfoPostFix' => '',
   'sSearch' => 'Search',
   'sUrl' => '',
+  'aboutPage' => 'AboutUs Page',
   'sInfoThousands' => 'Info Thousands',
   'sLoadingRecords' => 'Loading Records',
   'sFirst' => 'First',
@@ -96,4 +97,8 @@
   'enter Password' => 'Enter Password',
   'password' => 'Password',
   'Request' => 'Request',
+  'add Slider' => 'Add Slider',
+  'FAQ' => 'FAQ',
+  'Counter' => 'Counter',
+  'Steps' => 'Steps',
 );

@@ -20,11 +20,7 @@ class ArticlesController extends Controller
         $this->model = Articles::class;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index(Request $request)
     {
         if ($request->ajax()) {
@@ -45,7 +41,8 @@ class ArticlesController extends Controller
                     return "<div style='width: 200px;white-space: initial'>$row->text</div>";
                 })
                 ->addColumn('actions', function ($row) {
-                    return $this->editButton($row->id) . $this->deleteButton($row->id);
+                    $editUrl = route('articles.edit',$row->id);
+                    return "<a href='$editUrl'> <i class='fa fa-edit'></i></a>" . $this->deleteButton($row->id);
                 })->escapeColumns([])->make(true);
         }//end fun
         $oneObjectTitle = helperTrans('admin.article');
@@ -77,17 +74,24 @@ class ArticlesController extends Controller
             'title.*' => 'required',
             'text' => 'required|array',
             'text.*' => 'required',
+            'meta_title_ar' => 'required',
+            'meta_title_en' => 'required',
+            'meta_desc_ar' => 'required',
+            'meta_desc_en' => 'required',
+            'url_title' => 'required|unique:articles,url_title',
         ]);
 
         if ($request->hasFile('image')) {
             $data['image'] = $this->uploadFiles('Articles', $request->image);
         }
         $this->model::create($data);
-        return response()->json(
-            [
-                'code' => 200,
-                'message' => helperTrans('admin.operation accomplished successfully')
-            ]);
+        my_toaster(helperTrans('admin.operation accomplished successfully'));
+        return redirect(route('articles.index'));
+//        return response()->json(
+//            [
+//                'code' => 200,
+//                'message' => helperTrans('admin.operation accomplished successfully')
+//            ]);
     }
 
     /**
@@ -130,17 +134,24 @@ class ArticlesController extends Controller
             'title.*' => 'required',
             'text' => 'required|array',
             'text.*' => 'required',
+            'meta_title_ar' => 'required',
+            'meta_title_en' => 'required',
+            'meta_desc_ar' => 'required',
+            'meta_desc_en' => 'required',
+            'url_title' => "required|unique:articles,url_title,$row->id",
         ]);
 
         if ($request->hasFile('image')) {
             $data['image'] = $this->uploadFiles('Articles', $request->image, $row->image);
         }
         $row->update($data);
-        return response()->json(
-            [
-                'code' => 200,
-                'message' => helperTrans('admin.operation accomplished successfully')
-            ]);
+        my_toaster(helperTrans('admin.operation accomplished successfully'));
+        return redirect(route('articles.index'));
+//        return response()->json(
+//            [
+//                'code' => 200,
+//                'message' => helperTrans('admin.operation accomplished successfully')
+//            ]);
     }
 
     /**

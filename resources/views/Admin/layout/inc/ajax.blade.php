@@ -174,7 +174,13 @@
                         $('#Modal').modal('hide')
                         $('#form-load > form').remove()
                         $('#dataTable').DataTable().ajax.reload(null, false);
-                    } else {
+                    }
+                    {{--else if (data.code == 402) {--}}
+                    {{--    my_toaster("يرجي تسجيل الدخول مجددا", 'info')--}}
+                    {{--    window.location.href = "{{route('admin.login')}}";--}}
+                    {{--}--}}
+
+                    else {
                         $('#form-load > .infy-loader').hide(loader_form)
                         $('#form-load > form').show()
                         my_toaster(data.message, 'error')

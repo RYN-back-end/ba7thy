@@ -11,11 +11,13 @@
             <!-- data table -->
             <table id="dataTable" class="table myDataTable align-middle custom-table">
                 <thead>
-                <tr>
+                <tr class="child">
                     <th>#</th>
                     <th>{{helperTrans('admin.name')}}</th>
                     <th>{{helperTrans('admin.email')}}</th>
                     <th>{{helperTrans('admin.phone')}}</th>
+                    <th>{{helperTrans('web.Specialization')}}</th>
+                    <th>{{helperTrans('web.service type')}}</th>
                     <th>{{helperTrans('admin.message')}}</th>
                     <th>{{helperTrans('admin.created at')}}</th>
                     <th>{{helperTrans('admin.actions')}}</th>
@@ -23,6 +25,14 @@
                 </thead>
             </table>
         </div>
+        <style>
+            .child{
+                padding: 8px 4px 24px !important;
+                white-space: pre-line !important;
+                word-wrap: break-word !important;
+                max-width: 100px !important;
+            }
+        </style>
         <!-- modal -->
     </div>
 
@@ -34,6 +44,8 @@
             {data: 'name', name: 'name'},
             {data: 'email', name: 'email'},
             {data: 'phone', name: 'phone'},
+            {data: 'major_id', name: 'major_id'},
+            {data: 'services_type_id', name: 'services_type_id'},
             {data: 'message', name: 'message'},
             {data: 'created_at', name: 'created_at'},
             {data: 'actions', name: 'actions'},

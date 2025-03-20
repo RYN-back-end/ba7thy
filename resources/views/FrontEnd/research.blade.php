@@ -1,4 +1,13 @@
 @extends('FrontEnd.layout.inc.app')
+@section('special_meta')
+    <link rel="canonical" href="{{url()->current()}}" />
+@endsection
+@section('title')
+    {{$meta['title_'.get_lang()]}}
+@endsection
+@section('desc_of_page')
+    {{$meta['desc_'.get_lang()]}}
+@endsection
 @section('content')
     <!-- Start Breadcrumb Area  -->
     <div class="axil-breadcrumb-area">
@@ -13,7 +22,7 @@
                             <li class="axil-breadcrumb-item active"
                                 aria-current="page">{{helperTrans('web.Research')}} </li>
                         </ul>
-                        <h1 class="title"> {{helperTrans('web.All about academic research.')}}</h1>
+                        <h2 class="title"> {{helperTrans('web.All about academic research.')}}</h2>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-4">
@@ -36,16 +45,16 @@
                             aria-selected="true">
                         {{helperTrans('web.Articles')}}
                     </button>
-                    <!-- TAP -->
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-terms" role="tab"
-                            aria-selected="false">
-                        {{helperTrans('web.Tips and Advice')}}
-                    </button>
-                    <!-- TAP -->
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-delivery" role="tab"
-                            aria-selected="false">
-                        {{helperTrans('web.Resources and courses')}}
-                    </button>
+{{--                    <!-- TAP -->--}}
+{{--                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-terms" role="tab"--}}
+{{--                            aria-selected="false">--}}
+{{--                        {{helperTrans('web.Tips and Advice')}}--}}
+{{--                    </button>--}}
+{{--                    <!-- TAP -->--}}
+{{--                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-delivery" role="tab"--}}
+{{--                            aria-selected="false">--}}
+{{--                        {{helperTrans('web.Resources and courses')}}--}}
+{{--                    </button>--}}
                 </div>
                 <div class="tab-content col-lg-9 col-12" role="tabpanel" id="v-pills-tabContent">
                     <div class="tab-pane info-container fade show active" id="v-pills-faq" role="tabpanel">
@@ -56,15 +65,15 @@
                                     <div class="content-blog blog-grid">
                                         <div class="inner">
                                             <div class="thumbnail">
-                                                <a href="{{route('frontend.article',$article->id)}}">
+                                                <a href="{{route('frontend.article',($article->url_title) ?? '2')}}">
                                                     <img src="{{get_file($article->image)}}"
-                                                         alt="Blog Images">
+                                                         alt="{{$article->title}}">
                                                 </a>
                                             </div>
                                             <div class="content">
                                                 <h5 class="fw-bold mb-4">{{$article->title}}</h5>
                                                 <div class="read-more-btn">
-                                                    <a class="axil-btn right-icon" href="{{route('frontend.article',$article->id)}}">{{helperTrans('web.Read more')}}<i
+                                                    <a class="axil-btn right-icon" href="{{route('frontend.article',($article->url_title) ?? '2')}}">{{helperTrans('web.Read more')}}<i
                                                             class="fal fa-long-arrow-left"></i></a>
                                                 </div>
                                             </div>

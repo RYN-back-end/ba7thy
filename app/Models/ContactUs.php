@@ -9,4 +9,14 @@ class ContactUs extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+
+    public function major()
+    {
+        return $this->belongsTo(Majors::class,'major_id');
+    }//end fun
+    public function service_type()
+    {
+        return $this->belongsTo(ServicesTypes::class,'services_type_id');
+    }//end fun
 }

@@ -20,7 +20,7 @@
                 </button>
                 <!-- logo -->
                 <a href="/" class="brand-icon d-flex align-items-center mx-2 mx-sm-3 text-primary">
-                    <img class="logo" src="{{get_file(setting()->logo)}}" alt="">
+                    <img class="logo" src="https://bahthi.org/assets/frontend/img/4.svg" alt="">
                 </a>
             </div>
             <ul class="header-right justify-content-end d-flex align-items-center mb-0">
@@ -60,7 +60,7 @@
                     <a class="nav-link dropdown-toggle rounded-circle after-none p-0" href="#" role="button"
                        data-bs-toggle="dropdown">
                         <img class="avatar img-thumbnail rounded-circle shadow"
-                             src="{{get_file(admin()->user()->image)}}" alt="">
+                             src="https://bahthi.org/assets/frontend/img/4.svg" alt="">
                     </a>
                     <div class="dropdown-menu border-0 rounded-4 shadow p-0">
                         <div class="card border-0 w240">

@@ -13,7 +13,7 @@
                             <div class="about-features">
                                 <div class="spam sl-number">{{$key+1}}.</div>
                                 <h4 class="title"> {{$row->title}} </h4>
-                                <p>
+                                <p style="font-size: 18px">
                                     {{$row->text}}
                                 </p>
                             </div>
@@ -27,11 +27,22 @@
                     <div class="row row--10">
                         <div class="col-12">
                             @foreach($aboutUsImages as $key=>$image)
-{{--                                @if(($key+1) % 2 == 1)--}}
+                                @if(($key+1) % 2 == 1)
                                     <div class="thumbnail thumbnail-1">
                                         <img src="{{get_file($image->image)}}" alt="About">
                                     </div>
-{{--                                @endif--}}
+                                @endif
+                            @endforeach
+
+                        </div>
+                        <div class="col-6">
+                            @foreach($aboutUsImages as $key2=>$image)
+
+                                @if(($key2+1) % 2 != 1)
+                                    <div class="thumbnail thumbnail-1">
+                                        <img src="{{get_file($image->image)}}" alt="About">
+                                    </div>
+                                @endif
                             @endforeach
                         </div>
                     </div>

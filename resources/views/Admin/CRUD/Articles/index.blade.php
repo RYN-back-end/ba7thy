@@ -8,7 +8,10 @@
 @section('content')
 
     <div class="card">
-        {!! indexButtons(helperTrans('admin.our articles'),helperTrans('admin.add article')) !!}
+        {!! indexButtons(helperTrans('admin.our articles') )!!}
+        <div class="text-center">
+            <a href="{{route('articles.create')}}" class="btn btn-primary ">إضافة مقالة</a>
+        </div>
         <div class="card-body">
             <!-- data table -->
             <table id="dataTable" class="table myDataTable align-middle custom-table">

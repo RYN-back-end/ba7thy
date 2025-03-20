@@ -46,6 +46,12 @@ class ContactController extends Controller
                         return $e->getMessage();
                     }
                 })
+                ->editColumn('major_id', function ($row) {
+                    return  $row->major->title??"-";
+                })
+                ->editColumn('services_type_id', function ($row) {
+                    return  $row->service_type->title??"-";
+                })
                 ->addColumn('actions', function ($row) {
                     return  $this->deleteButton($row->id);
                 })->escapeColumns([])->make(true);

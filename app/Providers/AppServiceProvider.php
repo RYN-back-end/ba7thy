@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Artisan;
+use App\Models\Setting;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +23,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Artisan::call('storage:link');
+        View::share('setting',Setting::firstOrCreate());
+
+        //
+//        $route = Route::getCurrentRoute()->uri(); // Get the current route URI
+//
+//        if (Str::endsWith($route, '/')) {
+//            return 0;
+//        } else {
+//            return 1;
+//        }
     }
 }

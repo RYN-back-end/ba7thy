@@ -7,8 +7,10 @@ use App\Models\Admin;
 use App\Models\Drivers;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Setting;
 use App\Models\User;
 use App\Models\Warehouse;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -35,7 +37,7 @@ class AuthController extends Controller
             if (admin()->attempt($data, 1)) {
                 return response()->json(200);
             }
-
+//            return Admin::all();
             return response()->json(405);
         }
         return view("$this->folderPath.login");
@@ -53,9 +55,8 @@ class AuthController extends Controller
 
     public function index(Request $request)
     {
-
         if ($request->ajax()) {
-            $data = \App\Models\Request::latest();
+            $data = \App\Models\ContactUs::latest();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->editColumn('created_at', function ($row) {
@@ -76,16 +77,24 @@ class AuthController extends Controller
                     }
                 })
                 ->editColumn('major_id', function ($row) {
-                    return  $row->major->title??"";
+                    return  $row->major->title??"-";
                 })
                 ->editColumn('services_type_id', function ($row) {
-                    return  $row->service_type->title??"";
+                    return  $row->service_type->title??"-";
                 })
                 ->addColumn('actions', function ($row) {
                     return  $this->deleteButton($row->id);
                 })->escapeColumns([])->make(true);
         }//end fun
         $oneObjectTitle = helperTrans('admin.Request');
-        return view("Admin.Home.index", compact('oneObjectTitle'));
+        $nums = Setting::first();
+        $today = Carbon::today();
+        $isFirstDayOfMonth = $today->day === 1;
+        if ($isFirstDayOfMonth) {
+            $nums['whatsapp_clicks'] = 0;
+            $nums['telegram_clicks'] = 0;
+            $nums->save();
+        }
+        return view("Admin.Home.index", compact('oneObjectTitle','nums'));
     }//end fun
 }//end class

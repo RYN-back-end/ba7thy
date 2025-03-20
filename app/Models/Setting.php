@@ -9,6 +9,6 @@ use Spatie\Translatable\HasTranslations;
 class Setting extends Model
 {
     use HasFactory,HasTranslations;
-    public $translatable = ['title','desc'];
+    public $translatable = ['title', 'desc'];
     protected $guarded=[];
 }//end class

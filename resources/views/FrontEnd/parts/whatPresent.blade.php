@@ -6,7 +6,7 @@
                 {!! $whatPresent->text !!}
             </div>
             <div class="col-lg-6 col-12">
-                <div class="video-wrapper" style="background-image: url('{{get_file($whatPresent->image)}}')!important;">
+                <div class="video-wrapper" style="background-image: url('{{get_file($whatPresent->image)}}')!important;background-size: contain !important;">
                     <a href="{{get_file($whatPresent->video)}}" data-fancybox="about-us-video"
                        class="play-btn"><i class="fa-light fa-play"></i>
                         <div class="waves-block">

@@ -1,4 +1,7 @@
 @extends('FrontEnd.layout.inc.app')
+@section('title')
+    بحثى | Bahthi
+@endsection
 @section('content')
     <!-- Start Breadcrumb Area  -->
     <div class="axil-breadcrumb-area">

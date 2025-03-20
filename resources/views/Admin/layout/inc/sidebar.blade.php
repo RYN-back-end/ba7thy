@@ -7,7 +7,7 @@
         <div class="main-menu flex-grow-1">
             <ul class="menu-list my-4">
                 <li class="divider py-2 lh-sm"><span
-                        class="small"> {{helperTrans('admin.System Administrator')}} </span> <br>
+                            class="small"> {{helperTrans('admin.System Administrator')}} </span> <br>
                 </li>
                 <li>
                     <a class="m-link" href="{{route('admin.index')}}">
@@ -48,7 +48,21 @@
                         <li><a class="ms-link"
                                href="{{route('services.index')}}">{{helperTrans('admin.Services')}}</a>
                         </li>
-
+                        <li><a class="ms-link"
+                               href="{{route('questions.index')}}">{{helperTrans('admin.FAQ')}}</a>
+                        </li>
+                        <li><a class="ms-link"
+                               href="{{route('counters.index')}}">{{helperTrans('admin.Counter')}}</a>
+                        </li>
+                        <li><a class="ms-link"
+                               href="{{route('steps.index')}}">{{helperTrans('admin.Steps')}}</a>
+                        </li>
+                        <li><a class="ms-link"
+                               href="{{route('reviews.index')}}">اراء العملاء</a>
+                        </li>
+                        <li><a class="ms-link"
+                               href="{{route('aboutPage.index')}}">{{trans('admin.aboutPage')}}</a>
+                        </li>
                         <li><a class="ms-link"
                                href="{{route('majors.index')}}">{{helperTrans('admin.Majors')}}</a>
                         </li>
@@ -62,17 +76,30 @@
                 <li>
                     <a class="m-link" href="{{route('contacts.index')}}">
                         <i class="fa fa-message"></i>
-                        <span> {{helperTrans('admin.messages')}} </span>
+                        <span> رسائل العملاء </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="m-link" href="{{route('meta.index')}}">
+                        <i class="fa-regular fa-edit"></i>
+                        <span> بيانات Meta للصفحات </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="m-link" href="{{route('setting.index')}}">
+                        <i class="fa fa-cogs"></i>
+                        <span> سياسات الموقع </span>
                     </a>
                 </li>
 
 
-{{--                <li>--}}
-{{--                    <a class="m-link" href="{{route('requests.index')}}">--}}
-{{--                        <i class="fa fa-code-pull-request"></i>--}}
-{{--                        <span> {{helperTrans('admin.Requests')}} </span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                {{--                <li>--}}
+                {{--                    <a class="m-link" href="{{route('requests.index')}}">--}}
+                {{--                        <i class="fa fa-code-pull-request"></i>--}}
+                {{--                        <span> {{helperTrans('admin.Requests')}} </span>--}}
+                {{--                    </a>--}}
+                {{--                </li>--}}
 
                 {{--                <li>--}}
                 {{--                    <a class="m-link" href="{{route('setting.index')}}">--}}
