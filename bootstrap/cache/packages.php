@@ -1,15 +1,4 @@
 <?php return array (
-  'intervention/image' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Intervention\\Image\\ImageServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Image' => 'Intervention\\Image\\Facades\\Image',
-    ),
-  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -72,13 +61,6 @@
     'aliases' => 
     array (
       'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
-    ),
-  ),
-  'spatie/laravel-sitemap' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     ),
   ),
   'spatie/laravel-translatable' => 
