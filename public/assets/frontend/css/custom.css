@@ -15,6 +15,28 @@
   border-radius: 20px !important;
 }
 
+#preload {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: #fff;
+  z-index: 100;
+  z-index: 99999999999;
+  background-image: url(../img/Loader-min.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20%;
+}
+@media (max-width: 768px) {
+  #preload {
+    background-size: 60%;
+  }
+}
+
+.hide_loader {
+  display: none;
+}
+
 .categrie-product a {
   padding: 12px 12px 28px;
 }
@@ -232,16 +254,14 @@
   color: #0088cc;
 }
 .social-media-nav ul li:hover:nth-child(3) {
-  border-color: #1da1f2;
+  border-color: #FFFC00;
 }
-.social-media-nav ul li:hover:nth-child(3) a {
-  color: #1da1f2;
-}
+
 .social-media-nav ul li:hover:nth-child(2) {
-  border-color: #c32aa3;
+  border-color: #097EEB;
 }
 .social-media-nav ul li:hover:nth-child(2) a {
-  color: #c32aa3;
+  color: #097EEB;
 }
 .social-media-nav ul li:hover:nth-child(1) {
   border-color: #1877f2;
@@ -274,7 +294,7 @@
   height: 64px;
   border-radius: 50%;
   z-index: 5;
-  background-color: #4DCB5B;
+  background-color: #4dcb5b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -287,7 +307,7 @@
   .whatsappButton {
     left: 10px;
     bottom: 10px;
-    z-index: 100000000000000000;
+    z-index: 99999;
   }
 }
 
@@ -422,7 +442,7 @@ h1 {
 }
 
 .slick-slide.slick-current .main-slider-thumb img {
-  padding: 24px;
+  padding: 5px;
 }
 
 .main-slider-thumb {
@@ -594,7 +614,7 @@ h1 {
   }
 }
 .copyright-left .copy-right-p a {
-  color: #1D6C8E;
+  color: #08a06a;
   display: inline-block;
   height: auto;
   font-size: 18px;
@@ -606,7 +626,7 @@ h1 {
   }
 }
 .copyright-left .copy-right-p a img {
-  max-width: 40px;
+  max-width: 25px;
   margin: 0 2px;
 }
 @media (max-width: 576px) {

@@ -72,5 +72,6 @@ class Kernel extends HttpKernel
 
         'admin' => \App\Http\Middleware\Custom\Admin::class,
         'userAuth' => \App\Http\Middleware\Custom\User::class,
+        'checkUrl' => \App\Http\Middleware\emoverailinglash::class,
     ];
 }

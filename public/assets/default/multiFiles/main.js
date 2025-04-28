@@ -1,23 +1,25 @@
-
 function ImgUpload() {
     var imgWrap = "";
     var imgArray = [];
 
     $('.upload__inputfile').each(function () {
         $(this).on('change', function (e) {
+
             imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
             var maxLength = $(this).attr('data-max_length');
 
             var files = e.target.files;
             var filesArr = Array.prototype.slice.call(files);
             var iterator = 0;
-            filesArr.forEach(function (f, index) {
 
+            filesArr.forEach(function (f, index) {
                 if (!f.type.match('image.*')) {
+                    console.log('16')
                     return;
                 }
 
                 if (imgArray.length > maxLength) {
+                    console.log('21')
                     return false
                 } else {
                     var len = 0;
@@ -27,6 +29,7 @@ function ImgUpload() {
                         }
                     }
                     if (len > maxLength) {
+                        console.log('31')
                         return false;
                     } else {
                         imgArray.push(f);
@@ -46,16 +49,15 @@ function ImgUpload() {
 
     $('body').on('click', ".upload__img-close", function (e) {
 
-        if ($(this).hasClass('removeImageFromDb'))
-        {
+        if ($(this).hasClass('removeImageFromDb')) {
             var element = $(this)
             var url = $(this).data('url');
             $('.loader-ajax').show()
-            $.get(url,function (data) {
-                setTimeout(function (){
+            $.get(url, function (data) {
+                setTimeout(function () {
                     element.parent().parent().remove();
                     $('.loader-ajax').hide()
-                },500)
+                }, 500)
             })
             return true;
         }

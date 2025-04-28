@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Traits\Upload_Files;
 use App\Models\Admin;
 use App\Models\Warehouse;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\DataTables;
@@ -137,9 +138,18 @@ class AdminsController extends Controller
                 'password' => 'min:6',
             ]);
             $data['password'] = Hash::make($request->password);
+//            $data['password_changed_at'] = Carbon::now()->format('Y-m-d H:i');
+            $data['password_changed_at'] = null;
         }
 
         $admin->update($data);
+        if ($request->has('password') && $request->password) {
+            return response()->json(
+                [
+                    'code' => 200,
+                    //                    'code' => 402,
+                ]);
+        }
         return response()->json(
             [
                 'code' => 200,

@@ -20,6 +20,11 @@ class Admin
     public function handle(Request $request, Closure $next)
     {
         if (admin()->check()){
+            if(admin()->user()->password_changed_at != session('password_changed_at')) {
+                admin()->logout();
+                session()->flash('message', 'تم تحديث كلمة المرور يرجي تسجيل الدخول مجددا');
+                return redirect()->route('admin.login');
+            }
             return $next($request);
         }
         return redirect()->route('admin.login');

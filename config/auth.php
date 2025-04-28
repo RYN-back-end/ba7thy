@@ -71,6 +71,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+            'remember' => [
+                'provider' => 'admins',
+                'expire' => 60,
+                'column' => 'password_changed_at', // Update this line
+            ],
         ],
 
         // 'users' => [
@@ -118,6 +123,6 @@ return [
     |
     */
 
-    'password_timeout' => 10800,
+    'password_timeout' => 5400,
 
 ];

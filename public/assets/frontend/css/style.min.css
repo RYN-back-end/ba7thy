@@ -1,11 +1,11 @@
 ﻿@import "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap";
 @font-face {
-  font-family: IBMPlexSansArabic;
+  font-family: Roboto;
   font-display: swap;
-  src: url(../fonts/IBMPlexSansArabic-Regular.ttf);
+  src: url(../fonts/Roboto-Medium.ttf);
 }
 * {
-  font-family: "IBMPlexSansArabic", Sans-serif;
+  font-family: "Roboto", Sans-serif;
 }
 :root {
   --color-primary: #1126a5;
@@ -62,8 +62,8 @@
   --shadow-light: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
   --shadow-dark: 0 16px 32px 0 rgba(0, 0, 0, 0.04);
   --transition: 0.3s;
-  --font-primary: "IBMPlexSansArabic", Sans-serif;
-  --font-secondary: "IBMPlexSansArabic", Sans-serif;
+  --font-primary: "Roboto", Sans-serif;
+  --font-secondary: "Roboto", Sans-serif;
   --font-awesome: "Font Awesome 5 Pro";
   --font-size-b1: 16px;
   --font-size-b2: 14px;
@@ -8203,7 +8203,7 @@ button.axil-btn.btn-size-md i {
 .mainmenu > li > a {
   color: var(--color-heading);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 18px;
   font-family: var(--font-primary);
   line-height: 80px;
   height: 80px;

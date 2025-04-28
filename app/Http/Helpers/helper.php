@@ -98,11 +98,13 @@ if (!function_exists('helperTrans')) {
             $lang_array = include(resource_path("lang/$local/$file.php"));
 
             $processed_key = ucfirst(str_replace('_', ' ', remove_invalid_charcaters($key)));
-
             if (!array_key_exists($key, $lang_array)) {
+
                 $lang_array[$key] = $processed_key;
+
                 $str = "<?php return " . var_export($lang_array, true) . ";";
-                file_put_contents(resource_path("lang/$local/$file.php"), $str);
+
+               file_put_contents(resource_path("lang/$local/$file.php"), $str);
                 $result = $processed_key;
             } else {
                 $result = __("$file.$key");
